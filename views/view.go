@@ -25,7 +25,14 @@ func layoutFiles() []string {
 }
 
 func (v *View) Render(w http.ResponseWriter, data interface{}) error {
+	w.Header().Set("Content-Type", "text/html")
 	return v.Template.ExecuteTemplate(w, v.Layout, data)
+}
+
+func (v *View) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if err := v.Render(w, nil); err != nil {
+		panic(err)
+	}
 }
 
 // NewView get's all layout files and a number of files and stores it in "files"
