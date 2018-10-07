@@ -1,0 +1,15 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  age INT,
+  first_name TEXT,
+  last_name TEXT,
+  email TEXT UNIQUE NOT NULL
+);
+
+
+
+CREATE TABLE users (id SERIAL PRIMARY KEY, age INT, first_name TEXT, last_name TEXT, email TEXT UNIQUE NOT NULL );
+
+INSERT INTO users ( age , email , first_name , last_name ) VALUES ( 30 , 'jon@calhoun.io' , 'Jonathan' , 'Calhoun' );
+
+SELECT * FROM users WHERE email = 'jon@calhoun.io' AND age > 16 ;
