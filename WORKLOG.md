@@ -6,103 +6,103 @@
 
 | Chapter | Title                                                                              | Read? | Notes |
 |---------|------------------------------------------------------------------------------------|-------|------|
-| 1.1     | Who is this book for?                                                              |       |      |
-| 1.      | How to use this book                                                               |       |      |
-| 1.3     | Reference materials                                                                |       |      |
-| 1.4     | What if I am already an expert developer?                                          |       |      |
-| 1.5     | What are we building?                                                              |       |      |
-| 1.6     | Conventions used in this book                                                      |       |      |
-| 1.6.1   | Command-line commands are prefixed with a $                                        |       |      |
-| 1.6.2   | The subl or ‘atom’ command means “open with your text editor”                      |       |      |
-| 1.6.3   | Many code listings will be shortened for clarity                                   |       |      |
-| 1.6.4   | All code samples are limited to 60 columns when possible                           |       |      |
-| 1.7     | Accessing the code                                                                 |       |      |
-| 1.7.1   | Why git?                                                                           |       |      |
-| 1.8     | Disclaimer: Not everything is one size fits all                                    |       |      |
-| 1.9     | Commenting your exported types                                                     |       |      |
-| 2.1     | Building the server                                                                |       |      |
-| 2.2     | Demystifying our app                                                               |       |      |
-| 3.1     | Routing with if/else statements                                                    |       |      |
-| 3.2     | Popular routers                                                                    |       |      |
-| 3.2.1   | net/http.ServeMux                                                                  |       |      |
-| 3.2.2   | github.com/julienschmidt/httprouter                                                |       |      |
-| 3.2.3   | github.com/gorilla/mux.Router                                                      |       |      |
-| 3.2.4   | What about <some other router>                                                     |       |      |
-| 3.3     | Using the gorilla/mux router                                                       |       |      |
-| 3.4     | Exercises                                                                          |       |      |
-| 3.4.1   | Ex1 - Add an FAQ page                                                              |       |      |
-| 3.4.2   | Ex2 - Custom 404 page                                                              |       |      |
-| 3.4.3   | Ex3 - [HARD] Try out another router                                                |       |      |
-| 4.1     | What are templates?                                                                |       |      |
-| 4.2     | Why do we use templates?                                                           |       |      |
-| 4.3     | Templates in Go                                                                    |       |      |
-| 4.4     | Creating a template                                                                |       |      |
-| 4.5     | Contextual encoding                                                                |       |      |
-| 4.6     | Exercises                                                                          |       |      |
-| 4.6.1   | Ex1 - Add a new template variable                                                  |       |      |
-| 4.6.2   | Ex2 - Experiment with different data types                                         |       |      |
-| 4.6.3   | Ex3 - [HARD] Learn how to use nested data                                          |       |      |
-| 4.6.4   | Ex4 - [HARD] Create an if/else statement in your template                          |       |      |
-| 5.1     | Model-View-Controller (MVC)                                                        |       |      |
-| 5.2     | Walking through a web request                                                      |       |      |
-| 5.3     | Exercises                                                                          |       |      |
-| 5.3.1   | Ex1 - What does MVC stand for?                                                     |       |      |
-| 5.3.2   | Ex2 - What is each layer of MVC responsible for?                                   |       |      |
-| 5.3.3   | Ex3 - What are some benefits to using MVC?                                         |       |      |
-| 6.1     | The home template                                                                  |       |      |
-| 6.2     | The contact template                                                               |       |      |
-| 6.3     | Creating a reusable Bootstrap layout                                               |       |      |
-| 6.3.1   | Named templates                                                                    |       |      |
-| 6.3.2   | Creating a view type                                                               |       |      |
-| 6.3.3   | Creating the Bootstrap layout                                                      |       |      |
-| 6.4     | Adding a navigation bar                                                            |       |      |
-| 6.5     | Cleaning up our code                                                               |       |      |
-| 6.5.1   | What is globbing?                                                                  |       |      |
-| 6.5.2   | Using filepath.Glob                                                                |       |      |
-| 6.5.3   | Simplifying view rendering                                                         |       |      |
-| 6.5.4   | Moving our footer to the layout                                                    |       |      |
-| 6.6     | Exercises                                                                          |       |      |
-| 6.6.1   | Ex1 - Create an FAQ page with the Bootstrap layout                                 |       |      |
-| 6.6.2   | Ex2 - Update the navbar to link to the FAQ page                                    |       |      |
-| 6.6.3   | Ex3 - Create a new layout                                                          |       |      |
-| 7.1     | Add a sign up page with a form                                                     |       |      |
-| 7.1.1   | Creating a Bootstrap sign up form                                                  |       |      |
-| 7.1.2   | Wrapping our form in a panel                                                       |       |      |
-| 7.1.3   | Adding the sign up link to our navbar                                              |       |      |
-| 7.2     | An intro to REST                                                                   |       |      |
-| 7.2.1   | How REST affects our code                                                          |       |      |
-| 7.3     | Creating our first controller                                                      |       |      |
-| 7.3.1   | Create the users controller                                                        |       |      |
-| 7.3.2   | Moving the sign up page code                                                       |       |      |
-| 7.3.3   | Connecting our router and the users controller together                            |       |      |
-| 7.4     | Processing the sign up form                                                        |       |      |
-| 7.4.1   | Stubbing the create user action                                                    |       |      |
-| 7.4.2   | HTTP request methods and gorilla/mux                                               |       |      |
-| 7.4.3   | Parsing a POST form                                                                |       |      |
-| 7.4.4   | Parsing forms with gorilla/schema                                                  |       |      |
-| 7.4.5   | Keeping our parsing code DRY                                                       |       |      |
-| 7.5     | Cleaning up and creating a static controller                                       |       |      |
-| 7.5.1   | Creating the static controller                                                     |       |      |
-| 7.5.2   | Simplifying the creation of new views                                              |       |      |
-| 7.6     | Exercises                                                                          |       |      |
-| 7.6.1   | Ex1 - Add the FAQ page to the static controller                                    |       |      |
-| 7.6.2   | Ex2 - Create a new controller for galleries                                        |       |      |
-| 7.6.3   | Exercise cleanup                                                                   |       |      |
-| 8.1     | Our web app will use PostgreSQL                                                    |       |      |
-| 8.2     | Setting up PostgreSQL                                                              |       |      |
-| 8.2.1   | Install PostgreSQL                                                                 |       |      |
-| 8.2.2   | Learn how to connect to Postgres                                                   |       |      |
-| 8.2.3   | Learn the basics of SQL                                                            |       |      |
-| 8.2.4   | Gather information needed to connect to your Postgres install                      |       |      |
-| 8.3     | Using Postgres with Go and raw SQL                                                 |       |      |
-| 8.3.1   | Connecting to Postgres with the database/sql package                               |       |      |
-| 8.3.2   | Creating SQL tables to test with                                                   |       |      |
-| 8.3.3   | Writing records with database/sql                                                  |  x     |    problems  |
-| 8.3.4   | Querying a single record with database/sql                                         |       |     here |
-| 8.3.5   | Querying multiple records with database/sql                                        |       |      |
-| 8.3.6   | Writing a relational record                                                        |       |      |
-| 8.3.7   | Querying related records                                                           |       |      |
-| 8.3.8   | Delete the SQL tables we were testing with                                         |       |      |
+| 1.1     | Who is this book for?                                                              | x      |      |
+| 1.      | How to use this book                                                               | x      |      |
+| 1.3     | Reference materials                                                                | x      |      |
+| 1.4     | What if I am already an expert developer?                                          | x      |      |
+| 1.5     | What are we building?                                                              | x      |      |
+| 1.6     | Conventions used in this book                                                      | x      |      |
+| 1.6.1   | Command-line commands are prefixed with a $                                        | x      |      |
+| 1.6.2   | The subl or ‘atom’ command means “open with your text editor”                      | x      |      |
+| 1.6.3   | Many code listings will be shortened for clarity                                   | x      |      |
+| 1.6.4   | All code samples are limited to 60 columns when possible                           | x      |      |
+| 1.7     | Accessing the code                                                                 | x      |      |
+| 1.7.1   | Why git?                                                                           | x      |      |
+| 1.8     | Disclaimer: Not everything is one size fits all                                    | x      |      |
+| 1.9     | Commenting your exported types                                                     | x      |      |
+| 2.1     | Building the server                                                                | x      |      |
+| 2.2     | Demystifying our app                                                               | x      |      |
+| 3.1     | Routing with if/else statements                                                    | x      |      |
+| 3.2     | Popular routers                                                                    | x      |      |
+| 3.2.1   | net/http.ServeMux                                                                  | x      |      |
+| 3.2.2   | github.com/julienschmidt/httprouter                                                | x      |      |
+| 3.2.3   | github.com/gorilla/mux.Router                                                      | x      |      |
+| 3.2.4   | What about <some other router>                                                     | x      |      |
+| 3.3     | Using the gorilla/mux router                                                       | x      |      |
+| 3.4     | Exercises                                                                          | x      |      |
+| 3.4.1   | Ex1 - Add an FAQ page                                                              | x      |      |
+| 3.4.2   | Ex2 - Custom 404 page                                                              | x      |      |
+| 3.4.3   | Ex3 - [HARD] Try out another router                                                | x      |      |
+| 4.1     | What are templates?                                                                | x      |      |
+| 4.2     | Why do we use templates?                                                           | x      |      |
+| 4.3     | Templates in Go                                                                    | x      |      |
+| 4.4     | Creating a template                                                                | x      |      |
+| 4.5     | Contextual encoding                                                                | x      |      |
+| 4.6     | Exercises                                                                          | x      |      |
+| 4.6.1   | Ex1 - Add a new template variable                                                  | x      |      |
+| 4.6.2   | Ex2 - Experiment with different data types                                         | x      |      |
+| 4.6.3   | Ex3 - [HARD] Learn how to use nested data                                          | x      |      |
+| 4.6.4   | Ex4 - [HARD] Create an if/else statement in your template                          | x      |      |
+| 5.1     | Model-View-Controller (MVC)                                                        | x      |      |
+| 5.2     | Walking through a web request                                                      | x      |      |
+| 5.3     | Exercises                                                                          | x      |      |
+| 5.3.1   | Ex1 - What does MVC stand for?                                                     | x      |      |
+| 5.3.2   | Ex2 - What is each layer of MVC responsible for?                                   | x      |      |
+| 5.3.3   | Ex3 - What are some benefits to using MVC?                                         | x      |      |
+| 6.1     | The home template                                                                  | x      |      |
+| 6.2     | The contact template                                                               | x      |      |
+| 6.3     | Creating a reusable Bootstrap layout                                               | x      |      |
+| 6.3.1   | Named templates                                                                    | x      |      |
+| 6.3.2   | Creating a view type                                                               | x      |      |
+| 6.3.3   | Creating the Bootstrap layout                                                      | x      |      |
+| 6.4     | Adding a navigation bar                                                            | x      |      |
+| 6.5     | Cleaning up our code                                                               | x      |      |
+| 6.5.1   | What is globbing?                                                                  | x      |      |
+| 6.5.2   | Using filepath.Glob                                                                | x      |      |
+| 6.5.3   | Simplifying view rendering                                                         | x      |      |
+| 6.5.4   | Moving our footer to the layout                                                    | x      |      |
+| 6.6     | Exercises                                                                          | x      |      |
+| 6.6.1   | Ex1 - Create an FAQ page with the Bootstrap layout                                 | x      |      |
+| 6.6.2   | Ex2 - Update the navbar to link to the FAQ page                                    | x      |      |
+| 6.6.3   | Ex3 - Create a new layout                                                          | x      |      |
+| 7.1     | Add a sign up page with a form                                                     | x      |      |
+| 7.1.1   | Creating a Bootstrap sign up form                                                  | x      |      |
+| 7.1.2   | Wrapping our form in a panel                                                       | x      |      |
+| 7.1.3   | Adding the sign up link to our navbar                                              | x      |      |
+| 7.2     | An intro to REST                                                                   | x      |      |
+| 7.2.1   | How REST affects our code                                                          | x      |      |
+| 7.3     | Creating our first controller                                                      | x      |      |
+| 7.3.1   | Create the users controller                                                        | x      |      |
+| 7.3.2   | Moving the sign up page code                                                       | x      |      |
+| 7.3.3   | Connecting our router and the users controller together                            | x      |      |
+| 7.4     | Processing the sign up form                                                        | x      |      |
+| 7.4.1   | Stubbing the create user action                                                    | x      |      |
+| 7.4.2   | HTTP request methods and gorilla/mux                                               | x      |      |
+| 7.4.3   | Parsing a POST form                                                                | x      |      |
+| 7.4.4   | Parsing forms with gorilla/schema                                                  | x      |      |
+| 7.4.5   | Keeping our parsing code DRY                                                       | x      |      |
+| 7.5     | Cleaning up and creating a static controller                                       | x      |      |
+| 7.5.1   | Creating the static controller                                                     | x      |      |
+| 7.5.2   | Simplifying the creation of new views                                              | x      |      |
+| 7.6     | Exercises                                                                          | x      |      |
+| 7.6.1   | Ex1 - Add the FAQ page to the static controller                                    | x      |      |
+| 7.6.2   | Ex2 - Create a new controller for galleries                                        | x      |      |
+| 7.6.3   | Exercise cleanup                                                                   | x      |      |
+| 8.1     | Our web app will use PostgreSQL                                                    | x      |      |
+| 8.2     | Setting up PostgreSQL                                                              | x      |      |
+| 8.2.1   | Install PostgreSQL                                                                 | x      |      |
+| 8.2.2   | Learn how to connect to Postgres                                                   | x      |      |
+| 8.2.3   | Learn the basics of SQL                                                            | x      |      |
+| 8.2.4   | Gather information needed to connect to your Postgres install                      | x      |      |
+| 8.3     | Using Postgres with Go and raw SQL                                                 | x      |      |
+| 8.3.1   | Connecting to Postgres with the database/sql package                               | x      |      |
+| 8.3.2   | Creating SQL tables to test with                                                   | x      |      |
+| 8.3.3   | Writing records with database/sql                                                  |  x    |      |
+| 8.3.4   | Querying a single record with database/sql                                         |   x    |     |
+| 8.3.5   | Querying multiple records with database/sql                                        |   x   |      |
+| 8.3.6   | Writing a relational record                                                        |   x   |      |
+| 8.3.7   | Querying related records                                                           |    x   |      |
+| 8.3.8   | Delete the SQL tables we were testing with                                         |    x   |      |
 | 8.4     | Using GORM to interact with a database                                             |       |      |
 | 8.4.1   | Installing GORM and connecting to a database                                       |       |      |
 | 8.4.2   | Defining a GORM model                                                              |       |      |
