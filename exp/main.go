@@ -1,9 +1,13 @@
 package main
 
 import (
-	"database/sql"
+	"bufio"
 	"fmt"
+	"os"
+	"strings"
 
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	_ "github.com/lib/pq"
 )
 
@@ -12,8 +16,22 @@ const (
 	port     = 5432
 	user     = "postgres"
 	password = "IIvwbWZs7kizRdYwIRot"
-	dbname   = "lenslocked_dev"
+	dbname   = "lenslocked_exp"
 )
+
+type User struct {
+	gorm.Model
+	Name   string
+	Email  string `gorm:not null;unique_index`
+	Orders []Order
+}
+
+type Order struct {
+	gorm.Model
+	UserID      uint
+	Amount      int
+	Description string
+}
 
 func main() {
 
@@ -23,103 +41,45 @@ func main() {
 	)
 
 	// Opening database connection
-	db, err := sql.Open("postgres", psqlInfo)
+	db, err := gorm.Open("postgres", psqlInfo)
 	if err != nil {
 		panic(err)
 	}
 
-	// Ping the database
-	err = db.Ping()
-	if err != nil {
-		panic(err)
+	defer db.Close()
+	db.LogMode(true)
+	db.AutoMigrate(&User{})
+
+	var user User
+	db.Preload("Orders").First(&user)
+	if db.Error != nil {
+		panic(db.Error)
 	}
 
-	fmt.Println("Successfully connected!")
+	fmt.Println("Email:", user.Email)
+	fmt.Println("Number of Order:", len(user.Orders))
+	fmt.Println("Orders:", user.Orders)
 
-	// The first version w/out the ID
-	// _, err = db.Exec(`
-	//   INSERT INTO users(name, email)
-	//   VALUES($1, $2)`,
-	// 	"Jon Calhoun", "jon@calhoun.io")
-	// if err != nil {
-	// 	panic(err)
-	// }
+}
 
-	// // The second version that returns the ID
-	// var id int
-	// row := db.QueryRow(`
-	// 	INSERT INTO users(name, email)
-	// 	VALUES($1, $2) RETURNING id`,
-	// 	"Andrej Friesen", "andre.friesen@gmail.com")
-	// err = row.Scan(&id)
-	// if err != nil {
-	// 	panic(err)
-	// }
+func getInfo() (name, email string) {
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("What is your Name?")
+	name, _ = reader.ReadString('\n')
+	name = strings.TrimSpace(name)
+	fmt.Println("What is your Email?")
+	email, _ = reader.ReadString('\n')
+	email = strings.TrimSpace(email)
+	return name, email
+}
 
-	// var id int
-	// var name, email string
-	// rows, err := db.Query(`
-	// 	SELECT id, name, email
-	// 	FROM users
-	// 	WHERE id > $1`,
-	// 	0)
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// for rows.Next() {
-	// 	rows.Scan(&id, &name, &email)
-	// 	fmt.Println("ID:", id, "Name:", name, "Email:", email)
-	// }
-
-	// var id int
-	// var name, email string
-	// row := db.QueryRow(`
-	// 	SELECT id, name, email
-	// 	FROM users
-	// 	WHERE id=$1`, 4)
-	// err = row.Scan(&id, &name, &email)
-	// if err != nil {
-	// 	panic(err)
-	// }
-	// fmt.Println("ID:", id, "Name:", name, "Email:", email)
-
-	// var id int
-	// var name, email string
-	// rows, err := db.Query(`
-	// 	SELECT id, name, email
-	// 	FROM users
-	// 	WHERE id > $1`, 0)
-	// if err != nil {
-	// 	panic(err)
-	// }
-
-	// for rows.Next() {
-	// 	rows.Scan(&id, &name, &email)
-	// 	fmt.Println("ID:", id, "Name:", name, "Email:", email)
-	// }
-
-	var id int
-	for i := 1; i < 6; i++ {
-		//create some fake data
-		userId := 1
-		if i > 3 {
-			userId = 2
-		}
-		amount := 1000 * i
-		description := fmt.Sprintf("USB-C Adapter x%d", i)
-
-		err = db.QueryRow(`
-			INSERT INTO orders (user_id, amount, description)
-			VALUES ($1,$2,$3)
-			RETURNING id`,
-			userId, amount, description).Scan(&id)
-		if err != nil {
-			panic(err)
-		}
-		fmt.Println("Created an order with ID:", id)
+func createOrder(db *gorm.DB, user User, amount int, desc string) {
+	db.Create(&Order{
+		UserID:      user.ID,
+		Amount:      amount,
+		Description: desc,
+	})
+	if db.Error != nil {
+		panic(db.Error)
 	}
-
-	db.Close()
-
 }

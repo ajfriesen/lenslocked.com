@@ -103,24 +103,24 @@
 | 8.3.6   | Writing a relational record                                                        |   x   |      |
 | 8.3.7   | Querying related records                                                           |    x   |      |
 | 8.3.8   | Delete the SQL tables we were testing with                                         |    x   |      |
-| 8.4     | Using GORM to interact with a database                                             |       |      |
-| 8.4.1   | Installing GORM and connecting to a database                                       |       |      |
-| 8.4.2   | Defining a GORM model                                                              |       |      |
-| 8.4.3   | Creating and migrating tables with GORM                                            |       |      |
-| 8.4.4   | Logging with GORM                                                                  |       |      |
-| 8.4.5   | Creating a record with GORM                                                        |       |      |
-| 8.4.6   | Querying a single record with GORM                                                 |       |      |
-| 8.4.7   | Querying multiple records with GORM                                                |       |      |
-| 8.4.8   | Creating related models with GORM                                                  |       |      |
-| 8.4.9   | Querying relational data with GORM                                                 |       |      |
-| 8.5     | Exercises                                                                          |       |      |
-| 8.5.1   | Ex1 - What changes won’t the AutoMigrate function provided by GORM handle for you? |       |      |
-| 8.5.2   | Ex2 - What is gorm.Model used for?                                                 |       |      |
+| 8.4     | Using GORM to interact with a database                                             |   x    |      |
+| 8.4.1   | Installing GORM and connecting to a database                                       |   x    |      |
+| 8.4.2   | Defining a GORM model                                                              |    x   |      |
+| 8.4.3   | Creating and migrating tables with GORM                                            |   x    |      |
+| 8.4.4   | Logging with GORM                                                                  |     x  |      |
+| 8.4.5   | Creating a record with GORM                                                        |     x  |      |
+| 8.4.6   | Querying a single record with GORM                                                 |     x  |      |
+| 8.4.7   | Querying multiple records with GORM                                                |     x  |      |
+| 8.4.8   | Creating related models with GORM                                                  |     x  |      |
+| 8.4.9   | Querying relational data with GORM                                                 |     x  |      |
+| 8.5     | Exercises                                                                          |     x  |      |
+| 8.5.1   | Ex1 - What changes won’t the AutoMigrate function provided by GORM handle for you? |     x  |      |
+| 8.5.2   | Ex2 - What is gorm.Model used for?                                                 |     x  |      |
 | 8.5.3   | Ex3 - Experiment using a few more GORM methods.                                    |       |      |
 | 8.5.4   | Ex4 - Experiment with query chaining                                               |       |      |
 | 8.5.5   | Ex5 - Learn to execute raw SQL with GORM                                           |       |      |
-| 9.1     | Defining a User type                                                               |       |      |
-| 9.2     | Creating the UserService interface and querying for users                          |       |      |
+| 9.1     | Defining a User type                                                               |     x  |      |
+| 9.2     | Creating the UserService interface and querying for users                          |     x  |      |
 | 9.3     | Creating users                                                                     |       |      |
 | 9.4     | Querying by email and DRYing up our code                                           |       |      |
 | 9.5     | Updating and deleting users                                                        |       |      |
