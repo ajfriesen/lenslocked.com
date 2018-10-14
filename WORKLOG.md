@@ -349,7 +349,7 @@
 | 8.5     | Setting up and connecting to Postgres                    | x     |       |
 | 8.6     | SQL basics and creating tables to interact with          | x     |       |
 | 8.7     | Connecting to our database with Go's sql package         | x     |       |
-| 8.8     | Writing records to our database with Go's sql package    |       |  here |
+| 8.8     | Writing records to our database with Go's sql package    |   x    |     |
 | 8.9     | Querying for records with Go's sql package               |       |       |
 | 8.10    | Handling relational data with Go's sql package           |       |       |
 | 8.11    | Setting up GORM                                          |       |       |
