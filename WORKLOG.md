@@ -121,7 +121,7 @@
 | 8.5.5   | Ex5 - Learn to execute raw SQL with GORM                                           |       |      |
 | 9.1     | Defining a User type                                                               |     x  |      |
 | 9.2     | Creating the UserService interface and querying for users                          |     x  |      |
-| 9.3     | Creating users                                                                     |       |      |
+| 9.3     | Creating users                                                                     |   x   |      |
 | 9.4     | Querying by email and DRYing up our code                                           |       |      |
 | 9.5     | Updating and deleting users                                                        |       |      |
 | 9.6     | AutoMigrating and returning errors from DestructiveReset                           |       |      |
@@ -350,14 +350,14 @@
 | 8.6     | SQL basics and creating tables to interact with          | x     |       |
 | 8.7     | Connecting to our database with Go's sql package         | x     |       |
 | 8.8     | Writing records to our database with Go's sql package    |   x    |     |
-| 8.9     | Querying for records with Go's sql package               |       |       |
-| 8.10    | Handling relational data with Go's sql package           |       |       |
-| 8.11    | Setting up GORM                                          |       |       |
-| 8.12    | Creating our first model with GORM                       |       |       |
-| 8.13    | Creating records and logging with GORM                   |       |       |
-| 8.14    | Querying records with GORM                               |       |       |
-| 8.15    | Error handling with GORM                                 |       |       |
-| 8.16    | Relational data with GORM                                |       |       |
+| 8.9     | Querying for records with Go's sql package               |   x   |       |
+| 8.10    | Handling relational data with Go's sql package           |   x   |       |
+| 8.11    | Setting up GORM                                          |   x   |       |
+| 8.12    | Creating our first model with GORM                       |    x  |       |
+| 8.13    | Creating records and logging with GORM                   |    x  |       |
+| 8.14    | Querying records with GORM                               |   x   |       |
+| 8.15    | Error handling with GORM                                 |  x    |       |
+| 8.16    | Relational data with GORM                                |   x   |       |
 | 9.1     | Creating the User model                                  |       |       |
 | 9.2     | Creating the UserService                                 |       |       |
 | 9.3     | The create user method                                   |       |       |
