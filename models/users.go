@@ -1,31 +1,27 @@
 package models
 
-import(
+import (
 	"errors"
 
-	"github.com/jinzhu/gorm/"
+	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
-type User struc{
+var (
+	// ErrNotFound is returned when a resource can not be found in the database.
+	ErrNotFound = errors.New("models: resource not found")
+)
+
+type User struct {
 	gorm.Model
-	Name string
+	Name  string
 	Email string `gorm:"not null;unique_index"`
 }
 
-type UserService struct{
-	db *gorm.DB
-}
-
-var (
-	// ErrNotFound is returned when a resource can not be found in the database.
-	ErrorNotFound = erros.New("models: resource not found")
-)
-
-// NweUserService will connect to the database and return UserService with the active connection
+// NewUserService will connect to the database and return UserService with the active connection
 // Here we can not close the connection because it would not allow to return the connection
-func NewUserService(connectionInfo string) (*UserService, error){
-	db, err := form.Open("postgres", connectionInfo)
+func NewUserService(connectionInfo string) (*UserService, error) {
+	db, err := gorm.Open("postgres", connectionInfo)
 	if err != nil {
 		return nil, err
 	}
@@ -35,8 +31,13 @@ func NewUserService(connectionInfo string) (*UserService, error){
 	}, nil
 }
 
+// comment
+type UserService struct {
+	db *gorm.DB
+}
+
 // Close UserService database connection
-func (us *UserService) Close() error{
+func (us *UserService) Close() error {
 	return us.db.Close()
 }
 
@@ -49,13 +50,13 @@ func (us *UserService) Close() error{
 //
 // As a general rule, any error but ErrNotFound should
 // probably result in a 500 error.
-func (us *UserService) ByID(id unit) (*User, error) {
+func (us *UserService) ByID(id uint) (*User, error) {
 	var user User
 	err := us.db.Where("id = ?", id).First(&user).Error
-	switch err{
+	switch err {
 	case nil:
 		return &user, nil
-	case gorm.ErrorRecordNotFound:
+	case gorm.ErrRecordNotFound:
 		return nil, ErrNotFound
 	default:
 		return nil, err
@@ -63,7 +64,12 @@ func (us *UserService) ByID(id unit) (*User, error) {
 }
 
 // DestructiveReset drops the user table and rebuilds it
-func (us *UserService) DestructiveReset(){
-	us.db.DropTableIfExists(&Users{})
+func (us *UserService) DestructiveReset() {
+	us.db.DropTableIfExists(&User{})
 	us.db.AutoMigrate(&User{})
+}
+
+// Create will create a procided user and backfill data like the ID, CreatedAt, and UpdatedAt fields.
+func (us *UserService) Create(user *User) error {
+	return us.db.Create(user).Error
 }
