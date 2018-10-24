@@ -40,7 +40,7 @@ func main() {
 		panic(err)
 	}
 
-	foundUser, err := us.ByID(1)
+	foundUser, err := us.ByEmail("andre.friesen@gmail.com")
 	if err != nil {
 		panic(err)
 	}
