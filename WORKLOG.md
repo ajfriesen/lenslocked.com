@@ -122,7 +122,7 @@
 | 9.1     | Defining a User type                                                               |     x  |      |
 | 9.2     | Creating the UserService interface and querying for users                          |     x  |      |
 | 9.3     | Creating users                                                                     |   x   |      |
-| 9.4     | Querying by email and DRYing up our code                                           |       |      |
+| 9.4     | Querying by email and DRYing up our code                                           |   x   |      |
 | 9.5     | Updating and deleting users                                                        |       |      |
 | 9.6     | AutoMigrating and returning errors from DestructiveReset                           |       |      |
 | 9.7     | Connecting the user service and controller                                         |       |      |
@@ -358,9 +358,9 @@
 | 8.14    | Querying records with GORM                               |   x   |       |
 | 8.15    | Error handling with GORM                                 |  x    |       |
 | 8.16    | Relational data with GORM                                |   x   |       |
-| 9.1     | Creating the User model                                  |       |       |
-| 9.2     | Creating the UserService                                 |       |       |
-| 9.3     | The create user method                                   |       |       |
+| 9.1     | Creating the User model                                  |   x   |       |
+| 9.2     | Creating the UserService                                 |   x   |       |
+| 9.3     | The create user method                                   |   x   |       |
 | 9.4     | What does a model test look like?                        |       |       |
 | 9.5     | Finishing the UserService implementation                 |       |       |
 | 9.6     | Connecting models and controllers                        |       |       |
