@@ -123,7 +123,7 @@
 | 9.2     | Creating the UserService interface and querying for users                          |     x  |      |
 | 9.3     | Creating users                                                                     |   x   |      |
 | 9.4     | Querying by email and DRYing up our code                                           |   x   |      |
-| 9.5     | Updating and deleting users                                                        |       |      |
+| 9.5     | Updating and deleting users                                                        |   x   |      |
 | 9.6     | AutoMigrating and returning errors from DestructiveReset                           |       |      |
 | 9.7     | Connecting the user service and controller                                         |       |      |
 | 9.7.1   | Adding the name field the sign up form                                             |       |      |
@@ -361,7 +361,7 @@
 | 9.1     | Creating the User model                                  |   x   |       |
 | 9.2     | Creating the UserService                                 |   x   |       |
 | 9.3     | The create user method                                   |   x   |       |
-| 9.4     | What does a model test look like?                        |       |       |
+| 9.4     | What does a model test look like?                        |   x   |       |
 | 9.5     | Finishing the UserService implementation                 |       |       |
 | 9.6     | Connecting models and controllers                        |       |       |
 | 10.0    | An intro to building an auth system                      |       |       |
